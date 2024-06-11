@@ -19,7 +19,7 @@ public class Circle {
             throw new NegativeRadiusException();
         }
         double square = Math.PI * Math.pow(radius, 2);
-        return (int) Math.round(square);
+        return Math.round(Math.round(square));
     }
 
     public int getRadius() {
