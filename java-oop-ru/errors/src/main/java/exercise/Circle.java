@@ -14,12 +14,11 @@ public class Circle {
 
     }
 
-    public int getSquare() throws NegativeRadiusException {
+    public double getSquare() throws NegativeRadiusException {
         if (radius < 0) {
             throw new NegativeRadiusException();
         }
-        double square = Math.PI * Math.pow(radius, 2);
-        return Math.round(Math.round(square));
+        return Math.PI * Math.pow(radius, 2);
     }
 
     public int getRadius() {
