@@ -15,7 +15,6 @@ public class App {
     public static void save(Path path, Car car) {
         String serialized = car.serialize();
         try {
-            Files.createFile(path);
             Files.write(path, serialized.getBytes(), StandardOpenOption.APPEND);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -32,7 +31,7 @@ public class App {
         }
         String stringCar = jsonCar.stream()
         .map(n -> String.valueOf(n))
-        .collect(Collectors.joining(" ", "{", "}"));
+        .collect(Collectors.joining(" "));
 
         car = Car.unserialize(stringCar);
         return car;
