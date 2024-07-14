@@ -7,7 +7,7 @@
   <body>
     <div class="mx-auto p-4 py-md-5">
       <main>
-            <a href="/users">Users</a>
+            <a href="/users/index.jte">Users</a>
       </main>
     </div>
   </body>
