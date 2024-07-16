@@ -1,7 +1,10 @@
 package exercise;
 
 import io.javalin.Javalin;
+
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Supplier;
 
@@ -28,7 +31,7 @@ public final class App {
         app.get("/users", ctx -> {
             var header = "List of all users";
             var usersPage = new UsersPage(USERS, header);
-            ctx.render("/users/index.jte", model(usersPage));
+            ctx.render("/users/index.jte", Map.of("usersPage", usersPage));
         });
         app.get("/users/{id}", ctx -> {
             var header = "Page of current user";
@@ -37,7 +40,7 @@ public final class App {
             User user = USERS.stream().filter(user1 -> Objects.equals(user1.getId(), id)).findFirst().orElseThrow(notFound);
             var user1 = new User(user.getId(), user.getFirstName(), user.getLastName(), user.getEmail());
             var userPage = new UserPage(user1, header);
-            ctx.render("/users/show.jte", model(userPage));
+            ctx.render("/users/show.jte", Map.of("userPage", userPage));
         });
         // END
 
