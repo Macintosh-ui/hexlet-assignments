@@ -1,5 +1,5 @@
 @import exercise.dto.users.UsersPage
-@param UsersPage page
+@param UsersPage usersPage
 
 <html lang="en">
 <head>
@@ -7,8 +7,8 @@
     <title>List of all users</title>
 </head>
 <body>
-<h1>${page.getHeader()}</h1>
-@if (page.getUsers().isEmpty())
+<h1>${usersPage.getHeader()}</h1>
+@if (usersPage.getUsers().isEmpty())
     <p>There are no added users</p>
 @else
     <table>
@@ -19,7 +19,7 @@
             <tr>Last name</tr>
             <tr>E-mail</tr>
         </thead>
-        @for(var user : page.getUsers())
+        @for(var user : usersPage.getUsers())
             <tbody>
             <tr>
                 <div>

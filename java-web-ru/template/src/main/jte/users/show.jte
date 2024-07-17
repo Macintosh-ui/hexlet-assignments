@@ -1,5 +1,5 @@
 @import exercise.dto.users.UserPage
-@param UserPage page
+@param UserPage userPage
 
 <html lang="en">
 <head>
@@ -7,7 +7,7 @@
     <title>Page of current user</title>
 </head>
 <body>
-<h1>${page.getDescription()}</h1>
+<h1>${userPage.getDescription()}</h1>
 <table>
     <caption>User info</caption>
     <thead>
@@ -19,10 +19,10 @@
     <tbody>
     <tr>
         <div>
-            <td>${page.getUser().getId()}</td>
-            <td>${page.getUser().getFirstName()}</td>
-            <td>${page.getUser().getLastName()}</td>
-            <td>${page.getUser().getEmail()}</td>
+            <td>${userPage.getUser().getId()}</td>
+            <td>${userPage.getUser().getFirstName()}</td>
+            <td>${userPage.getUser().getLastName()}</td>
+            <td>${userPage.getUser().getEmail()}</td>
         </div>
     </tr>
     </tbody>

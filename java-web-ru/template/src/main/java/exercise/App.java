@@ -31,7 +31,7 @@ public final class App {
         app.get("/users", ctx -> {
             var header = "List of all users";
             var usersPage = new UsersPage(USERS, header);
-            ctx.render("/users/index.jte", Map.of("usersPage", usersPage));
+            ctx.render("/users/index.jte", model("page", usersPage));
         });
         app.get("/users/{id}", ctx -> {
             var header = "Page of current user";
